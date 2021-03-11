@@ -10,6 +10,7 @@ public class LinkedList {
         this.tail = null;
     }
 
+    // uc2 for adding to the linkedlist
     public void add(INode newNode) {
         count++;
         if (this.tail == null) {
@@ -24,7 +25,7 @@ public class LinkedList {
         }
     }
 
-    // uc2 for adding to the linkedlist
+
 
     public void print() {
         StringBuffer myNodes = new StringBuffer("Linked List: \n");
@@ -37,6 +38,21 @@ public class LinkedList {
         }
         myNodes.append(tempNode.getKey());
         System.out.println(myNodes);
+    }
+
+    //UC3 for appending
+    public void append(INode node) {
+        count++;
+        if (this.head == null) {
+            this.head = node;
+        }
+        if (this.tail == null) {
+            this.tail = node;
+        } else {
+            this.tail.setNext(node);
+            this.tail = node;
+        }
+
     }
 
     public static void main(String[] args){
