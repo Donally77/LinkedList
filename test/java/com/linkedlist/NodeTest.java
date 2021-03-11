@@ -33,5 +33,22 @@ public class NodeTest {
         assertEquals(true, result);
     }
 
+    //UC3 for append
+    @Test
+    public void testforAppend() {
+        System.out.println("This is test method for appending node to the list.");
+        Node<Integer> firstNode = new Node<>(56);
+        Node<Integer> secondNode = new Node<>(30);
+        Node<Integer> thirdNode = new Node<>(70);
+        LinkedList linkedlist = new LinkedList();
+        linkedlist.add(firstNode);
+        linkedlist.append(secondNode);
+        linkedlist.append(thirdNode);
+        linkedlist.print();
+        boolean result = linkedlist.head.equals(firstNode) && linkedlist.head.getNext().equals(secondNode)
+                && linkedlist.tail.equals(thirdNode);
+        assertTrue(result);
+    }
+
 
 }
