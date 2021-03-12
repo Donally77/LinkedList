@@ -92,6 +92,22 @@ public class LinkedList<K> {
         return null;
     }
 
+    //uc8 for search and insert
+    public INode searchAndInsert(K key, INode Node) {
+        INode temp = head;
+        while (temp != null && temp.getNext() != null) {
+            if (temp.getKey().equals(key)) {
+                break;
+            } else
+                temp = temp.getNext();
+        }
+        INode temp2 = temp.getNext();
+        temp.setNext(Node);
+        Node.setNext(temp2);
+        return temp;
+    }
+
+
     public static void main(String[] args){
         //Mater welcome message
         System.out.println("....Welcome to LinkedList Program....");
