@@ -4,6 +4,7 @@ public class LinkedList<K> {
     public INode head;
     public INode tail;
     public int count = 0;
+    public int size = 0;
 
     public LinkedList() {
         this.head = null;
@@ -105,6 +106,23 @@ public class LinkedList<K> {
         temp.setNext(Node);
         Node.setNext(temp2);
         return temp;
+    }
+    //uc9 search and remove
+    public INode searchAndRemove(K key) {
+        INode temp = head;
+        while (temp != null && temp.getNext() != null) {
+            if (temp.getNext().getKey().equals(key)) {
+                break;
+            } else
+                temp = temp.getNext();
+        }
+        temp.setNext(temp.getNext().getNext());
+        size--;
+        return temp;
+    }
+
+    public int Resize() {
+        return size;
     }
 
 

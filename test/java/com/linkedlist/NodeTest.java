@@ -137,6 +137,26 @@ public class NodeTest {
         assertEquals(secondNode, searchAndInsert);
     }
 
+    //uc9 to delete in between
+    @Test
+    public void testForSearchAndRemove() {
+        System.out.println("This is test method for searching and removing an element from the list.");
+        Node<Integer> firstNode = new Node<Integer>(56);
+        Node<Integer> secondNode = new Node<Integer>(30);
+        Node<Integer> thirdNode = new Node<Integer>(40);
+        Node<Integer> fourthNode = new Node<Integer>(70);
+        LinkedList LinkedList = new LinkedList();
+        LinkedList.add(firstNode);
+        LinkedList.append(secondNode);
+        LinkedList.append(thirdNode);
+        LinkedList.append(fourthNode);
+        LinkedList.print();
+        Node<Integer> searchAndRemove = (Node<Integer>) LinkedList.searchAndRemove(40);
+        System.out.print("Search and Remove! \nSize = " + LinkedList.Resize() + "\n");
+        LinkedList.print();
+        assertEquals(secondNode, searchAndRemove);
+    }
+
 
 
 
