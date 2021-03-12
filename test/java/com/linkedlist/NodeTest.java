@@ -103,7 +103,7 @@ public class NodeTest {
         assertEquals(thirdNode,popLast);
 
     }
-
+    //uc 7 for search
     @Test
     public void testForSearch() {
         System.out.println("This is test method for searching an element of the list.");
@@ -117,6 +117,24 @@ public class NodeTest {
         Node<Integer> search = (Node<Integer>) LinkedList.search(30);
         
         assertEquals(secondNode, search);
+    }
+
+    //uc8 for search and insert
+    @Test
+    public void testForSearchAndInsert() {
+        System.out.println("This is test method for searching and inserting an element in the list.");
+        Node<Integer> firstNode = new Node<Integer>(56);
+        Node<Integer> secondNode = new Node<Integer>(30);
+        Node<Integer> thirdNode = new Node<Integer>(70);
+        LinkedList LinkedList = new LinkedList();
+        LinkedList.add(firstNode);
+        LinkedList.append(secondNode);
+        LinkedList.append(thirdNode);
+        LinkedList.print();
+        Node<Integer> fourthNode = new Node<Integer>(40);
+        Node<Integer> searchAndInsert = (Node<Integer>) LinkedList.searchAndInsert(30, fourthNode);
+        LinkedList.print();
+        assertEquals(secondNode, searchAndInsert);
     }
 
 
