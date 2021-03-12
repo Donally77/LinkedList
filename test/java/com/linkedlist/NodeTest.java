@@ -157,7 +157,25 @@ public class NodeTest {
         assertEquals(secondNode, searchAndRemove);
     }
 
+    @Test
+    public void testForAddInSortedManner() {
+        System.out.println("This is test method for creating a sorted list in ascending order.");
+        Node<Integer> firstNode = new Node<Integer>(56);
+        Node<Integer> secondNode = new Node<Integer>(40);
+        Node<Integer> thirdNode = new Node<Integer>(70);
+        Node<Integer> fourthNode = new Node<Integer>(30);
+        LinkedList LinkedList = new LinkedList();
+        LinkedList.addSorted(firstNode);
+        LinkedList.addSorted(secondNode);
+        LinkedList.addSorted(thirdNode);
+        LinkedList.addSorted(fourthNode);
+        LinkedList.print();
+        boolean result = LinkedList.head.equals(fourthNode) && LinkedList.head.getNext().equals(secondNode)
+                && LinkedList.head.getNext().getNext().equals(firstNode)
+                && LinkedList.head.getNext().getNext().getNext().equals(thirdNode);
+        assertEquals(true, result);
 
+    }
 
 
 }

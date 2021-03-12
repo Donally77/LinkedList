@@ -1,9 +1,9 @@
 package com.linkedlist;
 
-public interface INode<K> {
+public interface INode<K extends Comparable<K>> {
     K getKey();
     void setKey(K key);
 
-    INode<K> getNext();
-    void setNext(INode<K> next);
+    INode getNext();
+    void setNext(INode next);
 }
