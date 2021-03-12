@@ -1,6 +1,6 @@
 package com.linkedlist;
 
-public class LinkedList {
+public class LinkedList<K> {
     public INode head;
     public INode tail;
     public int count = 0;
@@ -77,6 +77,19 @@ public class LinkedList {
         this.tail = temp;
         temp = temp.getNext();
         return temp;
+    }
+
+    //uc7 for search
+    public INode<K> search(K key) {
+        INode<K> tempNode = head;
+        while (tempNode != null && tempNode.getNext() != null) {
+            if (tempNode.getKey()==(key)) {
+                System.out.println("Element is found");
+                return tempNode;
+            } else
+                tempNode = tempNode.getNext();
+        }
+        return null;
     }
 
     public static void main(String[] args){
