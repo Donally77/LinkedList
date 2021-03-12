@@ -50,5 +50,22 @@ public class NodeTest {
         assertTrue(result);
     }
 
+    //uc4 for inserting element
+    @Test
+    public void testforinsert() {
+        System.out.println("This is test method for inserting element in the list.");
+        Node<Integer> firstNode = new Node<>(56);
+        Node<Integer> secondNode = new Node<>(30);
+        Node<Integer> thirdNode = new Node<>(70);
+        LinkedList linkedlist = new LinkedList();
+        linkedlist.add(firstNode);
+        linkedlist.append(thirdNode);
+        linkedlist.insert(firstNode, secondNode);
+        linkedlist.print();
+        boolean result = linkedlist.head.equals(firstNode) && linkedlist.head.getNext().equals(secondNode)
+                && linkedlist.tail.equals(thirdNode);
+        assertEquals(true, result);
+    }
+
 
 }

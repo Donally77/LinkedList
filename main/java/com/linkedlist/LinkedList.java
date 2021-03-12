@@ -55,6 +55,13 @@ public class LinkedList {
 
     }
 
+    //uc4 for insert
+    public void insert(INode myNode,INode newNode) {
+        INode tempNode = myNode.getNext();
+        myNode.setNext(newNode);
+        newNode.setNext(tempNode);
+    }
+
     public static void main(String[] args){
         //Mater welcome message
         System.out.println("....Welcome to LinkedList Program....");
