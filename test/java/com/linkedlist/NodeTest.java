@@ -2,6 +2,8 @@ package com.linkedlist;
 
 import org.junit.jupiter.api.Test;
 
+import java.security.Key;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -101,6 +103,23 @@ public class NodeTest {
         assertEquals(thirdNode,popLast);
 
     }
+
+    @Test
+    public void testForSearch() {
+        System.out.println("This is test method for searching an element of the list.");
+        Node<Integer> firstNode = new Node<Integer>(56);
+        Node<Integer> secondNode = new Node<Integer>(30);
+        Node<Integer> thirdNode = new Node<Integer>(70);
+        LinkedList LinkedList = new LinkedList();
+        LinkedList.add(firstNode);
+        LinkedList.append(secondNode);
+        LinkedList.append(thirdNode);
+        Node<Integer> search = (Node<Integer>) LinkedList.search(30);
+        
+        assertEquals(secondNode, search);
+    }
+
+
 
 
 }
