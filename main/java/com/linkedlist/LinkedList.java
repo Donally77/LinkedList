@@ -68,9 +68,21 @@ public class LinkedList {
         this.head = head.getNext();
         return temp;
     }
+    //uc6 delete last elemet
+    public INode popLast() {
+        INode temp = head;
+        while (!temp.getNext().equals(tail)) {
+            temp = temp.getNext();
+        }
+        this.tail = temp;
+        temp = temp.getNext();
+        return temp;
+    }
 
     public static void main(String[] args){
         //Mater welcome message
         System.out.println("....Welcome to LinkedList Program....");
     }
+
+
 }

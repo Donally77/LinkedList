@@ -83,6 +83,24 @@ public class NodeTest {
         Node<Integer> pop = (Node<Integer>) linkedlist.pop();
         assertEquals(secondNode,pop);
     }
+    //uc6 for deleting last element
+    @Test
+    public void testFordeletelast() {
+        System.out.println("This is test method for deleting last element from the list.");
+        Node<Integer> firstNode = new Node<Integer>(70);
+        Node<Integer> secondNode = new Node<Integer>(30);
+        Node<Integer> thirdNode = new Node<Integer>(56);
+        LinkedList linkedlist = new LinkedList();
+        linkedlist.add(firstNode);
+        linkedlist.add(secondNode);
+        linkedlist.add(thirdNode);
+        linkedlist.print();
+        linkedlist.popLast();
+        linkedlist.print();
+        Node<Integer> popLast = (Node<Integer>) linkedlist.pop();
+        assertEquals(thirdNode,popLast);
+
+    }
 
 
 }
