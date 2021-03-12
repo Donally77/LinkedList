@@ -1,6 +1,8 @@
 package com.linkedlist;
 
-public class LinkedList<K> {
+import java.lang.Comparable;
+
+public class LinkedList<K extends Comparable<K>> {
     public INode head;
     public INode tail;
     public int count = 0;
@@ -123,6 +125,25 @@ public class LinkedList<K> {
 
     public int Resize() {
         return size;
+    }
+    
+    //uc10 for ordered list
+    public void addSorted(INode newNode) {
+        INode tempNode;
+
+        if (head == null || (head.getKey()).compareTo(newNode.getKey()) >= 0) {
+            newNode.setNext(head);
+            head = newNode;
+        } else {
+            tempNode = head;
+            while (tempNode.getNext() != null && (tempNode.getNext().getKey()).compareTo(newNode.getKey()) < 0) {
+                tempNode = tempNode.getNext();
+                newNode.setNext(tempNode.getNext());
+                tempNode.setNext(newNode);
+            }
+            size++;
+        }
+
     }
 
 
