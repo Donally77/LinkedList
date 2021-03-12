@@ -62,6 +62,13 @@ public class LinkedList {
         newNode.setNext(tempNode);
     }
 
+    //uc5 for deleting first node
+    public INode pop() {
+        INode temp = this.head;
+        this.head = head.getNext();
+        return temp;
+    }
+
     public static void main(String[] args){
         //Mater welcome message
         System.out.println("....Welcome to LinkedList Program....");
